@@ -1,38 +1,135 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    transition: all 0.2s linear;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: .2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    width: 400px;
+    text-align: center;
+    border: 10px solid #101116;
+    background: #101116;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(60px, auto);
 }
 
-.App-link {
-  color: #61dafb;
+.container form {
+    width: 100%;
+    margin-bottom: .2rem;
+    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input[type="text"] {
+    height: 75px;
+    width: 100%;
+    background-color: #293d6e;
+    border: 0;
+    opacity: 0.6;
+    color: #fff;
+    text-align: right;
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: .1rem;
+    padding: 0 1rem;
+    border-radius: 5px;
+}
+
+#clear {
+    grid-column: 1/3;
+    grid-row: 1;
+
+    font-weight: 500;
+}
+
+#result {
+    grid-column: 3/5;
+    grid-row: 5;
+    color: #333;
+}
+
+#backspace {
+    color: #333;
+}
+
+button {
+    margin: .3rem;
+    border: none;
+    border-radius: .2rem;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    font-weight: 600;
+    background: #222;
+    color: #fff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.2);
+}
+
+/* button:hover {
+    transform: scale(1.1);
+} */
+
+
+@keyframes button-click {
+    0% {
+        transform: scale(1);
+        background: radial-gradient(circle at center, #53555a 0%, #e0e0e0 0%);
+    }
+
+    100% {
+        transform: scale(1.1);
+        background: radial-gradient(circle at center, #53555a 0%, #e0e0e0 100%);
+    }
+}
+
+button:active {
+    animation: button-click 0.3s linear;
+    animation-fill-mode: forwards;
+    color: #000;
+}
+
+input:focus,
+input:active,
+button:focus,
+button:active {
+    outline: none;
+}
+
+/* button:active {
+    transform: scale(1);
+    background-color: #293d6e;
+    color: #fff !important;
+} */
+
+.orange-btn {
+    background-color: #ff9f1a;
+    color: #fff;
+}
+
+.gray-btn {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.equal-btn {
+    background-color: #ff0000;
+    color: #fff !important;
 }
