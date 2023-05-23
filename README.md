@@ -1,4 +1,8 @@
-Website is Live: https://calsify.netlify.app/
+#LetsGrowMore Virtual Web Developement Internship Program May 2023
+#TASK 4 INTERMEDIATE LEVEL TASK
+#CREATE A CALCULATOR USING HTML, CSS & JS OR REACT JS
+
+Website is live on: https://calsify.netlify.app/
 
 Technologies used:
 1) ReactJs
